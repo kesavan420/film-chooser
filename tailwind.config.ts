@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,6 +53,16 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				cinema: {
+					100: '#E5DEFF',
+					200: '#D6BCFA',
+					300: '#9b87f5',
+					400: '#8B5CF6',
+					500: '#7E69AB',
+					600: '#6E59A5',
+					700: '#1A1F2C',
+					900: '#0F1218',
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +95,44 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-slow': {
+					'0%, 100%': {
+						opacity: 1
+					},
+					'50%': {
+						opacity: 0.8
+					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: 0
+					},
+					'100%': {
+						opacity: 1
+					}
+				},
+				'fade-up': {
+					'0%': {
+						opacity: 0,
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: 1,
+						transform: 'translateY(0)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-slow': 'pulse-slow 4s ease-in-out infinite',
+				'fade-in': 'fade-in 0.5s ease-out',
+				'fade-up': 'fade-up 0.5s ease-out'
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'cinema-gradient': 'linear-gradient(to right, #1A1F2C, #0F1218)',
 			}
 		}
 	},
