@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Film, User, Search, FileUp } from 'lucide-react';
+import { Film, User, Search, FileUp, Paperclip } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Link } from 'react-router-dom';
@@ -37,6 +37,12 @@ const Header: React.FC = () => {
           <Link to="/csv-import">
             <FileUp className="h-4 w-4 mr-2" />
             Import CSV
+          </Link>
+        </Button>
+        <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-white" asChild>
+          <Link to="/attach-csv">
+            <Paperclip className="h-4 w-4 mr-2" />
+            Attach CSV
           </Link>
         </Button>
         <Button variant="outline" size="sm" className="border-cinema-300 text-cinema-300 hover:bg-cinema-300/10">
