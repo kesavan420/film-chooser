@@ -1,17 +1,18 @@
 
 import React from 'react';
-import { Film, User, Search } from 'lucide-react';
+import { Film, User, Search, FileUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   return (
     <header className="w-full py-4 px-6 flex items-center justify-between bg-opacity-90 glass-effect fixed top-0 z-50">
       <div className="flex items-center space-x-2">
         <Film className="w-6 h-6 text-cinema-300" />
-        <h1 className="text-xl font-bold bg-gradient-to-r from-cinema-300 to-cinema-400 bg-clip-text text-transparent">
+        <Link to="/" className="text-xl font-bold bg-gradient-to-r from-cinema-300 to-cinema-400 bg-clip-text text-transparent">
           FilmChooser
-        </h1>
+        </Link>
       </div>
       
       <div className="hidden md:flex flex-1 max-w-md mx-4">
@@ -26,11 +27,17 @@ const Header: React.FC = () => {
       </div>
       
       <div className="flex items-center space-x-4">
-        <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-white">
-          Discover
+        <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-white" asChild>
+          <Link to="/">Discover</Link>
         </Button>
         <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-white">
           Recommendations
+        </Button>
+        <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-white" asChild>
+          <Link to="/csv-import">
+            <FileUp className="h-4 w-4 mr-2" />
+            Import CSV
+          </Link>
         </Button>
         <Button variant="outline" size="sm" className="border-cinema-300 text-cinema-300 hover:bg-cinema-300/10">
           <User className="h-4 w-4 mr-2" />
